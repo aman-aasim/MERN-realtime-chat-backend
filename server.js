@@ -8,6 +8,7 @@ const { Server } = require("socket.io");
 const authRoutes = require("./routes/authRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const userRoutes = require("./routes/userRoutes");
+const largeDataRoutes = require("./routes/largedataRoutes");
 
 const Message = require("./models/Chat");
 
@@ -33,6 +34,7 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/data", largeDataRoutes);
 
 io.on("connection", (socket) => {
 
